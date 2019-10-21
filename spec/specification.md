@@ -29,6 +29,7 @@ You can find a complete `spec.yaml` example [here](../../examples/sample_spec.ya
         * [`env`](#env)
 * [`push`](#push)
 * [`params`](#params)
+* [`daemon`](#daemon)
 
 ---
 
@@ -157,7 +158,6 @@ version of ocibuilder - progress can be tracked [here]().
 
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
-| daemon | boolean | Allows you to specify whether to use the docker daemon as a builder or buildah. Default is true. | No |
 | purge | boolean | Purge after built. Defaults is false. | No |
 | imageContext | v1alpha1.ImageContext | Specify an image build context for the step | No |
 | stages | (*Array*) v1alpha1.Stage | Stages of the build | Yes |
@@ -184,7 +184,6 @@ prevent the constant persisting of images which will not be used.
           template: go-build-template
       tag: v0.1.0
       purge: false
-      daemon: true
       context:
         localContext:
           contextPath: ./go-app
@@ -420,3 +419,15 @@ params:
   - dest: build.steps.0.metadata.name
     valueFromEnv: BUILD_DEV
 ```
+
+### `daemon`
+
+Daemon is a boolean which allows you to specify whether you want to use the docker daemon, or buildah as an alternative.
+
+A `true` value will execute all commands using docker, a `false` flag will execute all commands using buildah.
+
+This value can be overriding by the `builder` command line flag which takes priority.
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| daemon | boolean | Allows you to specify whether to use the docker daemon as a builder or buildah. Default is true. | No |
