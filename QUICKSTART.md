@@ -31,15 +31,47 @@ our [Docker registry](https://cloud.docker.com/u/ocibuilder/repository/docker/oc
 
 More details are available on the ocictl [installation guide](./INSTALL.md)
 
-## First Steps
+## Generating Template Spec
 
 Once you have `ocictl` installed and available in the path, you can now put together your desired build specification.
 
 The quickest way to get a sample spec within your project is to run:
 
-```ocictl init```
+```bash
+ocictl init
+```
 
 This will generate a template specification for you which you can then fill in with your custom build specifications.
 
 Our [specification docs](https://github.com/ocibuilder/docs/blob/master/spec/specification.md) outline in detail how to tailor your specification
 to your specific build.
+
+## Running a Build
+
+Once you have configured your build specification to your project you can conduct a build by running:
+
+```bash
+ocictl build
+```
+
+This will conduct a docker build be default with your given specification. By default your build context path will be treated as the current
+directory.
+
+If you want to run the build using `buildah` as the build tool, you can:
+
+1. In your specification, set the `daemon` field to `false`
+2. Run the following command instead:
+
+```bash
+ocictl build --builder buildah
+```
+
+## Pushing your built image
+
+Once your image has been built you can very easily push it with the following command
+
+```bash
+ocictl build
+```
+
+
