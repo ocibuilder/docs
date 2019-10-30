@@ -4,11 +4,13 @@ The ocibuilder is a tool for producing oci complaint images.
 
 This repository contains all the documentation for getting started and configuring the ocibuilder.
 
+## Quick Start
+
+You can get started with the ocibuilder by following the [quickstart guide](./QUICKSTART.md).
 
 ## Commands
 
 Documentation of the cli commands for ocibuilder can be found [here](./commands)
-
 
 ## Specification
 
