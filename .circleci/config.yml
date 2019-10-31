@@ -4,12 +4,20 @@ jobs:
     docker:
       - image: python:3.8.0
     steps:
+      - add_ssh_keys:
+          fingerprints:
+            - "2b:ac:ea:28:0a:70:a8:fb:b8:68:c1:a9:a6:46:9e:a1"
       - checkout
       - run:
           name: Install Mkdocs
           command: |
             pip install mkdocs
             pip install mkdocs-material
+      - run:
+          name: Set Git Config
+          command: |
+            git config user.email "pipeline@circleci.com"
+            git config user.name "circleci"
       - run:
           name: Deploy
           command: mkdocs gh-deploy
