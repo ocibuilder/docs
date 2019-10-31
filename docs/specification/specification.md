@@ -2,7 +2,7 @@
 
 This document is a reference for ocibuilder v0.1.0 specification keys used in `spec.yaml`.
 
-You can find a complete `spec.yaml` example [here](../../examples/sample_spec.yaml).
+You can find a complete `spec.yaml` example [here](../examples/complete-spec).
 
 ---
 
@@ -407,7 +407,7 @@ element you would have ``steps.0``
 | ---- | ---- | ----------- | -------- |
 | dest | string | Dest is the destination of the field to replace with the parameter | Yes |
 | value | string | Value of the environment variable. | No |
-| valueFromEnv | string |  a variable which is to be replaced by an env var | No |
+| valueFromEnvVariable | string |  a variable which is to be replaced by an env var | No |
 
 **Example**
 ```yaml
@@ -417,7 +417,7 @@ params:
     value: 0.0.3
   # Replaces the value in location build.steps.0.metadata.name with the environment variable $BUILD_DEV
   - dest: build.steps.0.metadata.name
-    valueFromEnv: BUILD_DEV
+    valueFromEnvVariable: BUILD_DEV
 ```
 
 ### `daemon`
