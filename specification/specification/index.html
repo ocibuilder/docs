@@ -1,0 +1,1767 @@
+
+
+
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta http-equiv="x-ua-compatible" content="ie=edge">
+      
+      
+      
+      
+        <meta name="lang:clipboard.copy" content="Copy to clipboard">
+      
+        <meta name="lang:clipboard.copied" content="Copied to clipboard">
+      
+        <meta name="lang:search.language" content="en">
+      
+        <meta name="lang:search.pipeline.stopwords" content="True">
+      
+        <meta name="lang:search.pipeline.trimmer" content="True">
+      
+        <meta name="lang:search.result.none" content="No matching documents">
+      
+        <meta name="lang:search.result.one" content="1 matching document">
+      
+        <meta name="lang:search.result.other" content="# matching documents">
+      
+        <meta name="lang:search.tokenizer" content="[\s\-]+">
+      
+      <link rel="shortcut icon" href="../../assets/images/favicon.png">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.4.3">
+    
+    
+      
+        <title>Configuring Ocibuilder - OCI Builder</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../assets/stylesheets/application.30686662.css">
+      
+      
+    
+    
+      <script src="../../assets/javascripts/modernizr.74668098.js"></script>
+    
+    
+      
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
+      
+    
+    <link rel="stylesheet" href="../../assets/fonts/material-icons.css">
+    
+    
+    
+      
+    
+    
+  </head>
+  
+    <body dir="ltr">
+  
+    <svg class="md-svg">
+      <defs>
+        
+        
+      </defs>
+    </svg>
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    
+      <a href="#configuring-ocibuilder" tabindex="1" class="md-skip">
+        Skip to content
+      </a>
+    
+    
+      <header class="md-header" data-md-component="header">
+  <nav class="md-header-nav md-grid">
+    <div class="md-flex">
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <a href="../.." title="OCI Builder" class="md-header-nav__button md-logo">
+          
+            <i class="md-icon"></i>
+          
+        </a>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        <label class="md-icon md-icon--menu md-header-nav__button" for="__drawer"></label>
+      </div>
+      <div class="md-flex__cell md-flex__cell--stretch">
+        <div class="md-flex__ellipsis md-header-nav__title" data-md-component="title">
+          
+            <span class="md-header-nav__topic">
+              OCI Builder
+            </span>
+            <span class="md-header-nav__topic">
+              
+                Configuring Ocibuilder
+              
+            </span>
+          
+        </div>
+      </div>
+      <div class="md-flex__cell md-flex__cell--shrink">
+        
+          <label class="md-icon md-icon--search md-header-nav__button" for="__search"></label>
+          
+<div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" placeholder="Search" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="query" data-md-state="active">
+      <label class="md-icon md-search__icon" for="__search"></label>
+      <button type="reset" class="md-icon md-search__icon" data-md-component="reset" tabindex="-1">
+        &#xE5CD;
+      </button>
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="result">
+          <div class="md-search-result__meta">
+            Type to start searching
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+        
+      </div>
+      
+    </div>
+  </nav>
+</header>
+    
+    <div class="md-container">
+      
+        
+      
+      
+      <main class="md-main" role="main">
+        <div class="md-main__inner md-grid" data-md-component="container">
+          
+            
+              <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    <nav class="md-nav md-nav--primary" data-md-level="0">
+  <label class="md-nav__title md-nav__title--site" for="__drawer">
+    <a href="../.." title="OCI Builder" class="md-nav__button md-logo">
+      
+        <i class="md-icon"></i>
+      
+    </a>
+    OCI Builder
+  </label>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../.." title="Introduction" class="md-nav__link">
+      Introduction
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../installation/" title="Installation" class="md-nav__link">
+      Installation
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item">
+    <a href="../../quickstart/" title="Quickstart Guide" class="md-nav__link">
+      Quickstart Guide
+    </a>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-4" type="checkbox" id="nav-4">
+    
+    <label class="md-nav__link" for="nav-4">
+      Commands
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-4">
+        Commands
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../commands/build/" title="Build" class="md-nav__link">
+      Build
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../commands/init/" title="Init" class="md-nav__link">
+      Init
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../commands/login/" title="Login" class="md-nav__link">
+      Login
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../commands/pull/" title="Pull" class="md-nav__link">
+      Pull
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../commands/push/" title="Push" class="md-nav__link">
+      Push
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-5" type="checkbox" id="nav-5">
+    
+    <label class="md-nav__link" for="nav-5">
+      Examples
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-5">
+        Examples
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/complete-spec/" title="Complete Specification" class="md-nav__link">
+      Complete Specification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/go-spec/" title="Go Specification" class="md-nav__link">
+      Go Specification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/java-spec/" title="Java Specification" class="md-nav__link">
+      Java Specification
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/simple-build-spec/" title="Simple Build" class="md-nav__link">
+      Simple Build
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/simple-login-spec/" title="Simple Login" class="md-nav__link">
+      Simple Login
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../examples/simple-push-spec/" title="Simple Push" class="md-nav__link">
+      Simple Push
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+
+  <li class="md-nav__item md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-6" type="checkbox" id="nav-6">
+    
+    <label class="md-nav__link" for="nav-6">
+      Features
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-6">
+        Features
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../features/environment-variables/" title="Environment variables" class="md-nav__link">
+      Environment variables
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../features/multi-stage-builds/" title="Multi stage builds" class="md-nav__link">
+      Multi stage builds
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
+    <a href="../../features/overlays/" title="Overlays" class="md-nav__link">
+      Overlays
+    </a>
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+      
+      
+      
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+    
+      <input class="md-toggle md-nav__toggle" data-md-toggle="nav-7" type="checkbox" id="nav-7" checked>
+    
+    <label class="md-nav__link" for="nav-7">
+      Specification
+    </label>
+    <nav class="md-nav" data-md-component="collapsible" data-md-level="1">
+      <label class="md-nav__title" for="nav-7">
+        Specification
+      </label>
+      <ul class="md-nav__list" data-md-scrollfix>
+        
+        
+          
+          
+          
+
+  
+
+
+  <li class="md-nav__item md-nav__item--active">
+    
+    <input class="md-toggle md-nav__toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+    
+      
+    
+    
+      <label class="md-nav__link md-nav__link--active" for="__toc">
+        Configuring Ocibuilder
+      </label>
+    
+    <a href="./" title="Configuring Ocibuilder" class="md-nav__link md-nav__link--active">
+      Configuring Ocibuilder
+    </a>
+    
+      
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build" class="md-nav__link">
+    build
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    templates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name" class="md-nav__link">
+    name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmd" class="md-nav__link">
+    cmd
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ansible" class="md-nav__link">
+    ansible
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#galaxy" class="md-nav__link">
+    galaxy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local" class="md-nav__link">
+    local
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    docker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    steps
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imagecontext" class="md-nav__link">
+    imageContext
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localcontext" class="md-nav__link">
+    localContext
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stages" class="md-nav__link">
+    stages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base" class="md-nav__link">
+    base
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata" class="md-nav__link">
+    metadata
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#login" class="md-nav__link">
+    login
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creds" class="md-nav__link">
+    creds
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#env" class="md-nav__link">
+    env
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plain" class="md-nav__link">
+    plain
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push" class="md-nav__link">
+    push
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#params" class="md-nav__link">
+    params
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daemon" class="md-nav__link">
+    daemon
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+    
+  </li>
+
+        
+      </ul>
+    </nav>
+  </li>
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+<nav class="md-nav md-nav--secondary">
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">Table of contents</label>
+    <ul class="md-nav__list" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#table-of-contents" class="md-nav__link">
+    Table of Contents
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#build" class="md-nav__link">
+    build
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#templates" class="md-nav__link">
+    templates
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#name" class="md-nav__link">
+    name
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#cmd" class="md-nav__link">
+    cmd
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#ansible" class="md-nav__link">
+    ansible
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#galaxy" class="md-nav__link">
+    galaxy
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#local" class="md-nav__link">
+    local
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#docker" class="md-nav__link">
+    docker
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#steps" class="md-nav__link">
+    steps
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#imagecontext" class="md-nav__link">
+    imageContext
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#localcontext" class="md-nav__link">
+    localContext
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#stages" class="md-nav__link">
+    stages
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#base" class="md-nav__link">
+    base
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata" class="md-nav__link">
+    metadata
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#login" class="md-nav__link">
+    login
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#creds" class="md-nav__link">
+    creds
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#env" class="md-nav__link">
+    env
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#plain" class="md-nav__link">
+    plain
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#push" class="md-nav__link">
+    push
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#params" class="md-nav__link">
+    params
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#daemon" class="md-nav__link">
+    daemon
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+      
+      
+      
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          <div class="md-content">
+            <article class="md-content__inner md-typeset">
+              
+                
+                
+                <h1 id="configuring-ocibuilder">Configuring Ocibuilder</h1>
+<p>This document is a reference for ocibuilder v0.1.0 specification keys used in <code>spec.yaml</code>.</p>
+<p>You can find a complete <code>spec.yaml</code> example <a href="../examples/complete-spec">here</a>.</p>
+<hr />
+<h2 id="table-of-contents">Table of Contents</h2>
+<ul>
+<li><a href="#build"><code>build</code></a><ul>
+<li><a href="#templates"><code>templates</code></a><ul>
+<li><a href="#name"><code>name</code></a></li>
+<li><a href="#cmd"><code>cmd</code></a><ul>
+<li><a href="#ansible"><code>ansible</code></a><ul>
+<li><a href="#galaxy"><code>galaxy</code></a></li>
+<li><a href="#local"><code>local</code></a></li>
+</ul>
+</li>
+<li><a href="#docker"><code>docker</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#steps"><code>steps</code></a><ul>
+<li><a href="#imagecontext"><code>imageContext</code></a><ul>
+<li><a href="#localcontext"><code>localContext</code></a></li>
+</ul>
+</li>
+<li><a href="#stages"><code>stages</code></a><ul>
+<li><a href="#cmd"><code>cmd</code></a></li>
+<li><a href="#metadata"><code>metadata</code></a></li>
+<li><a href="#base"><code>base</code></a></li>
+</ul>
+</li>
+<li><a href="#metadata"><code>metadata</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#login"><code>login</code></a><ul>
+<li><a href="#creds"><code>creds</code></a><ul>
+<li><a href="#plain"><code>plain</code></a></li>
+<li><a href="#env"><code>env</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#push"><code>push</code></a></li>
+<li><a href="#params"><code>params</code></a></li>
+<li><a href="#daemon"><code>daemon</code></a></li>
+</ul>
+<hr />
+<h3 id="build"><code>build</code></h3>
+<p>A build comprises of reusable build templates and a number of build steps</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>templates</td>
+<td><em>(Array)</em> v1alpha1.BuildTemplate</td>
+<td>Templates are set of build templates that describe steps needed to build a Dockerfile</td>
+<td>No</td>
+</tr>
+<tr>
+<td>steps</td>
+<td><em>(Array)</em> v1alpha1.BuildStep</td>
+<td>Individual build definitions to run</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="templates"><code>templates</code></h4>
+<p>Templates are reusable build configurations that can be used accross a number of different build steps and are referred to by the name field.
+Multiple build commands can be entered which will be executed by ocibuilder.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name of the template</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>cmd</td>
+<td><em>(Array)</em> v1alpha1.BuildTemplateStep</td>
+<td>Steps are instructions within a template to build a Dockerfile</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="yaml">  templates:
+    - name: go-build-template
+      cmd:
+        - docker:
+            inline:
+              - ADD . /src
+              - RUN cd /src &amp;&amp; go build -o goapp
+</code></pre>
+
+<p>The above example shows a very simple build template, using docker commands which have been passed inline.</p>
+<h4 id="name"><code>name</code></h4>
+<p>Name is the name of the template. This can be referenced across multiple build steps and build stages allowing you to not have to rewrite 
+standard build commands across different builds. </p>
+<h4 id="cmd"><code>cmd</code></h4>
+<p>Cmd allows you to specify commands that you want to run in your build. This can be standard docker commands, which can be passed 
+inline or through a file. Alternatively, you are able to specify an ansible step which you can use to point to a local ansible playbook
+or the name and requirements to pull from Ansible galaxy.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>ansible</td>
+<td>v1alpha1.AnsibleStep</td>
+<td>Ansible represents a ansible step within build template steps</td>
+<td>No</td>
+</tr>
+<tr>
+<td>docker</td>
+<td>v1alpha1.DockerStep</td>
+<td>Docker represents a docker step within build template steps</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="yaml">  cmd:
+    - docker:
+        inline:
+          - ADD . /src
+          - RUN cd /src &amp;&amp; go build -o goapp
+    - docker:
+        path: ./docker-commands.txt
+    - ansible:
+        galaxy:
+          name: my-ansible-role
+          requirements: ./requirements.yaml
+        local:
+          playbook: ./playbook.yaml
+
+</code></pre>
+
+<p>The above example shows all the possible flavours for inputting build commands into ocibuilder.</p>
+<h5 id="ansible"><code>ansible</code></h5>
+<p>Ansible is used for entering references to local ansible playbooks or ansible roles in Ansible Galaxy. Each ansible step represents an
+ansible install as part of the build.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>galaxy</td>
+<td>v1alpha1.AnsibleGalaxy</td>
+<td>Galaxy contains information to install a ansible role through ansible-galaxy</td>
+<td>No</td>
+</tr>
+<tr>
+<td>local</td>
+<td>v1alpha1.AnsibleLocal</td>
+<td>Local contains information to install a ansible role through local playbook</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h5 id="galaxy"><code>galaxy</code></h5>
+<p>AnsibleGalaxy contains ansible role information to be installed at the build</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name of the galaxy role</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>requirements</td>
+<td>string</td>
+<td>Requirements refer to the requirements.yaml file</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h5 id="local"><code>local</code></h5>
+<p>AnsibleLocal contains information to install a ansible role through local playbook</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>playbook</td>
+<td>string</td>
+<td>Playbook refers to playbook.yaml file</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h5 id="docker"><code>docker</code></h5>
+<p>Docker is used for entering docker commands that you want to execute in your build. You have the option of passing commands inline
+with each docker command being a string array element.</p>
+<p>Alternatively, you can pass in a filepath to a text file which contains your docker commands.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>inline</td>
+<td><em>(Array)</em> string</td>
+<td>Inline Dockerfile commands</td>
+<td>No</td>
+</tr>
+<tr>
+<td>path</td>
+<td>string</td>
+<td>Path to a file that contains Dockerfile commands</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="steps"><code>steps</code></h4>
+<p>Build <em>steps</em> are used to configure multiple unique builds with a single <code>spec.yml</code>. </p>
+<p>This can be particularly useful when trying to build multiple modules or 
+projects in a single repository, allowing you to reuse the <code>templates</code> that you have defined in the specification.</p>
+<p>Each step is run consecutively by ocibuilder with concurrent build steps running in a future
+version of ocibuilder - progress can be tracked <a href="">here</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>purge</td>
+<td>boolean</td>
+<td>Purge after built. Defaults is false.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>imageContext</td>
+<td>v1alpha1.ImageContext</td>
+<td>Specify an image build context for the step</td>
+<td>No</td>
+</tr>
+<tr>
+<td>stages</td>
+<td>(<em>Array</em>) v1alpha1.Stage</td>
+<td>Stages of the build</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>tag</td>
+<td>string</td>
+<td>The tag of the built image</td>
+<td>No</td>
+</tr>
+<tr>
+<td>metadata</td>
+<td>v1alpha1.Metadata</td>
+<td>Build metadata, name, labels, annotations</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p>The purge flag allows you to purge your built images after they've been built. Ensures cleanup and is useful in build pipelines to
+prevent the constant persisting of images which will not be used.</p>
+<p><strong>Example</strong></p>
+<pre><code class="yaml">  # Steps are all the individual build steps you want to execute
+  steps:
+    # Metadata is where you define your final image build name as well as any labels
+    - metadata:
+        name: my-docker-registry:4555/art/go-service
+      stages:
+        - metadata:
+            name: build-env
+          base:
+            image: golang
+            platform: alpine
+          template: go-build-template
+      tag: v0.1.0
+      purge: false
+      context:
+        localContext:
+          contextPath: ./go-app
+</code></pre>
+
+<h5 id="imagecontext"><code>imageContext</code></h5>
+<p>ImageContext enables you to specify a build context for each individual build step. For example, if you have
+multiple directories and each directory is a separate build step, you are able to specify a particular
+directory as the build context that step.</p>
+<p>Additionally, an upcoming version of ocibuilder will have support to set external build contexts of S3 buckets and Git paths.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>localContext</td>
+<td>context.LocalContext</td>
+<td>Local context contains local context information for a build</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h5 id="localcontext"><code>localContext</code></h5>
+<p>LocalContext holds local context information for an image build</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>contextPath</td>
+<td>string</td>
+<td>The path to your build context.</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h5 id="stages"><code>stages</code></h5>
+<p>Ocibuilder supports <a href="https://docs.docker.com/develop/develop-images/multistage-build/">docker multi-stage builds</a> to help 
+drastically reduce final image sizes. You are able to define a multi-stage build in each build step.</p>
+<p>In each stage you have the option to define build commands under the <code>cmd</code> field or pass in a previously specified build template.</p>
+<p>A stage also takes in a base image.</p>
+<p>Required to pass in either cmd or a build template.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>base</td>
+<td>v1alpha1.Base</td>
+<td>Refers to parent image for given build stage.</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>cmd</td>
+<td>(<em>Array</em>) v1alpha1.BuildTemplateStep</td>
+<td>Cmd refers to a template defined in a stage without a template.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>template</td>
+<td>string</td>
+<td>Template refers to one of the build templates.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>metadata</td>
+<td>v1alpha1.Metadata</td>
+<td>Build metadata, name, labels, annotations</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="yaml">  stages:
+    - metadata:
+        name: go-binary
+      base:
+        image: golang
+        platform: alpine
+      cmd:
+        - docker:
+            inline:
+              - ADD . /src
+              - RUN cd /src &amp;&amp; go build -o goapp
+    - metadata:
+        name: alpine-stage
+      base:
+        image: alpine
+      cmd:
+        - docker:
+            inline:
+              - WORKDIR /app
+              - COPY --from=go-binary /src/goapp /app/
+              - ENTRYPOINT ./goapp
+</code></pre>
+
+<p>In the above example, the first stage of the build uses the golang:alpine base image to build our go binary and is named <code>go-binary</code>.</p>
+<p>Our second build stage refers to just our binary built in the first stage with <code>--from=go-binary</code> and copies this into our
+new container image and sets an entrypoint.</p>
+<p>More details about multi-stage builds can be found <a href="../../features/multi-stage-builds/">here</a> </p>
+<h5 id="base"><code>base</code></h5>
+<p>Base is where you define your base image.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>image</td>
+<td>string</td>
+<td>The name of the image</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>platform</td>
+<td>string</td>
+<td>The specified platform of the image</td>
+<td>No</td>
+</tr>
+<tr>
+<td>tag</td>
+<td>string</td>
+<td>The tag for the image</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="yaml">  base:
+    image: golang
+    platform: alpine
+    tag: latest
+</code></pre>
+
+<h5 id="metadata"><code>metadata</code></h5>
+<p>This is where any build metadata is defined, including image name, any labels and annotations that you want to specify for your build.</p>
+<p>The metadata type is used both in build steps and build stages. </p>
+<p>Within a <strong>build step</strong> name is used to name your final built image, but can be also used to refer to other <strong>build stages</strong> in a
+multi-stage build.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>annotations</td>
+<td>map</td>
+<td>Annotations for your build config</td>
+<td>No</td>
+</tr>
+<tr>
+<td>labels</td>
+<td>map</td>
+<td>Labels for your build config</td>
+<td>No</td>
+</tr>
+<tr>
+<td>name</td>
+<td>string</td>
+<td>Name for your build configuration</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<hr />
+<h3 id="login"><code>login</code></h3>
+<p>Login is used to specify credentials necessary to login to an image registry. These credentials are required to push and
+pull images from an image registry.</p>
+<p>You can specify credentials through plain, with environment variables, through the use of a token or a combination of the above.</p>
+<p><a href="#params">Params</a> can also be used in conjunction with login credentials to pass in environment variables as a token or plaintext
+credentials.</p>
+<blockquote>
+<p><strong>NOTE</strong> Using a token may also require you to pass in a username as a credential depending on your image registry.</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>creds</td>
+<td>v1alpha1.RegistryCreds</td>
+<td>credentials required to log into the registry</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>registry</td>
+<td>string</td>
+<td>Registry refers to a OCI image registry</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>token</td>
+<td>string</td>
+<td>An image registry token</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="yaml">login:
+  - registry: my-docker-registry:4555
+    token: ThisIsMeloGinToken
+    creds:
+      plain:
+        username: art
+</code></pre>
+
+<h4 id="creds"><code>creds</code></h4>
+<p>Holds the specific credentials to login to a given image registry</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>env</td>
+<td>v1alpha1.EnvCreds</td>
+<td>Env refers to the credentials stored in environment variables</td>
+<td>No</td>
+</tr>
+<tr>
+<td>plain</td>
+<td>v1alpha1.PlainCreds</td>
+<td>Plain refers to the credentials set inline</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h5 id="env"><code>env</code></h5>
+<p>Credentials pulled from enviroment variables</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>string</td>
+<td>Username refers to an env var that holds the username</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>Password refers to an env var that holds the password</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="yaml">login:
+  env:
+    username: REGISTRY_USER
+    password: REGISTRY_PASS
+</code></pre>
+
+<h5 id="plain"><code>plain</code></h5>
+<p>Plaintext credentials for image registry login</p>
+<blockquote>
+<p><strong>NOTE</strong> It is not recommended to store your credentials in plaintext</p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>string</td>
+<td>Plaintext registry username</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>Plaintext registry password</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="yaml">login:
+  env:
+    username: artsuser
+    password: artsp4ss
+</code></pre>
+
+<hr />
+<h3 id="push"><code>push</code></h3>
+<p>Push enables you to specify multiple registries to push your image to. Push expects the registry you want to push to
+have a corresponding login specification. </p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>image</td>
+<td>string</td>
+<td>Image to push</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>registry</td>
+<td>string</td>
+<td>Registry is the name of the registry</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>tag</td>
+<td>string</td>
+<td>Tag version of the image (e.g: v0.1.1)</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="yaml">push:
+  - registry: my-docker-registry:4555
+    image: art/go-service
+    tag: v0.1.0
+</code></pre>
+
+<hr />
+<h3 id="params"><code>params</code></h3>
+<p>Params is where you can define parameters, allowing you to replace any value in the specification
+with a value or an environment variable.</p>
+<p>You specify the destination of the value you want to replace in the <code>dest</code> key using dot notation
+to access nested elements.</p>
+<blockquote>
+<p><strong>NOTE</strong>: A specific array item is referred to by index  in the dest field. For example, if you want to access the first step
+element you would have <code>steps.0</code></p>
+</blockquote>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>dest</td>
+<td>string</td>
+<td>Dest is the destination of the field to replace with the parameter</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>value</td>
+<td>string</td>
+<td>Value of the environment variable.</td>
+<td>No</td>
+</tr>
+<tr>
+<td>valueFromEnvVariable</td>
+<td>string</td>
+<td>a variable which is to be replaced by an env var</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="yaml">params:
+  # Replaces the value in location build.steps.0.tag with 0.0.3
+  - dest: build.steps.0.tag
+    value: 0.0.3
+  # Replaces the value in location build.steps.0.metadata.name with the environment variable $BUILD_DEV
+  - dest: build.steps.0.metadata.name
+    valueFromEnvVariable: BUILD_DEV
+</code></pre>
+
+<h3 id="daemon"><code>daemon</code></h3>
+<p>Daemon is a boolean which allows you to specify whether you want to use the docker daemon, or buildah as an alternative.</p>
+<p>A <code>true</code> value will execute all commands using docker, a <code>false</code> flag will execute all commands using buildah.</p>
+<p>This value can be overriding by the <code>builder</code> command line flag which takes priority.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>daemon</td>
+<td>boolean</td>
+<td>Allows you to specify whether to use the docker daemon as a builder or buildah. Default is true.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+                
+                  
+                
+              
+              
+                
+
+
+              
+            </article>
+          </div>
+        </div>
+      </main>
+      
+        
+<footer class="md-footer">
+  
+    <div class="md-footer-nav">
+      <nav class="md-footer-nav__inner md-grid">
+        
+          <a href="../../features/overlays/" title="Overlays" class="md-flex md-footer-nav__link md-footer-nav__link--prev" rel="prev">
+            <div class="md-flex__cell md-flex__cell--shrink">
+              <i class="md-icon md-icon--arrow-back md-footer-nav__button"></i>
+            </div>
+            <div class="md-flex__cell md-flex__cell--stretch md-footer-nav__title">
+              <span class="md-flex__ellipsis">
+                <span class="md-footer-nav__direction">
+                  Previous
+                </span>
+                Overlays
+              </span>
+            </div>
+          </a>
+        
+        
+      </nav>
+    </div>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-footer-copyright">
+        
+        powered by
+        <a href="https://www.mkdocs.org">MkDocs</a>
+        and
+        <a href="https://squidfunk.github.io/mkdocs-material/">
+          Material for MkDocs</a>
+      </div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    
+      <script src="../../assets/javascripts/application.ac79c3b0.js"></script>
+      
+      <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
+      
+    
+  </body>
+</html>
