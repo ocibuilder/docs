@@ -1,0 +1,24 @@
+version: 2
+jobs:
+  deploy:
+    docker:
+      - image: python:3.8.0
+    steps:
+      - checkout
+      - run:
+          name: Install Mkdocs
+          command: |
+            pip install mkdocs
+            pip install mkdocs-material
+      - run:
+          name: Deploy
+          command: mkdocs gh-deploy
+workflows:
+  version: 2
+  deploy:
+    jobs:
+      - deploy:
+          filters:
+            branches:
+              only:
+                - master
