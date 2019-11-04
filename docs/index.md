@@ -1,6 +1,6 @@
 # Introduction
 
-![oci-gopher.png](../assets/oci-gopher.png)
+![oci-gopher.png](https://raw.githubusercontent.com/ocibuilder/docs/master/assets/oci-gopher.png)
 
 The OCI Builder is a tool for producing oci complaint images. 
 
