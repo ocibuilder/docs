@@ -1,11 +1,11 @@
 # Simple Login
 
 An example of a simple **login** specification, which can be used as a `login.yaml` file or
-configured within your `spec.yaml`.
+configured within your `ocibuilder.yaml`.
 
 ```yaml
 # You can either use this individual login.yaml file or 
-# specify the login specifications in the global spec.yaml
+# specify the login specifications in the global ocibuilder.yaml
 
 # login into different docker registries
 login:

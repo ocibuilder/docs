@@ -23,14 +23,14 @@ ocictl push [flags] [...]
 #### Options
 
 ```
--p, --path          Path to your spec.yaml or push.yaml. By default will look in the current working directory
+-p, --path          Path to your ocibuilder.yaml or push.yaml. By default will look in the current working directory
 -b, --builder       Choose either docker and buildah as the targetted image builder. By default the builder is docker.
 -d, --debug         Turn on debug logging
 ```
 
 ### Example
 
-spec.yaml
+ocibuilder.yaml
 ```yaml
 push:
     - registry: my-image-registry.docker.com:1111
@@ -39,11 +39,11 @@ push:
 ```
 Command
 ```
-ocictl push --path ./spec.yaml
+ocictl push --path ./ocibuilder.yaml
 ```
 
 or you can use shorthand option like this: 
 
 ```
-ocictl push -p ./spec.yaml
+ocictl push -p ./ocibuilder.yaml
 ```

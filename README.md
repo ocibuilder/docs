@@ -16,7 +16,7 @@ Documentation of the cli commands for OCI Builder can be found [here](https://oc
 
 ## Specification
 
-A complete documentation of the entire OCI Builder specification file `spec.yaml` can be found [here](https://ocibuilder.github.io/docs/specification/specification/)
+A complete documentation of the entire OCI Builder specification file `ocibuilder.yaml` can be found [here](https://ocibuilder.github.io/docs/specification/specification/)
 
 ## Examples
 

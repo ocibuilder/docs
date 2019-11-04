@@ -22,7 +22,7 @@ ocictl pull [flags] [...]
 
 ```
 -i, --name          Specify the name of the image you want to pull
--p, --path          Path to your spec.yaml. By default will look in the current working directory
+-p, --path          Path to your ocibuilder.yaml. By default will look in the current working directory
 -b, --builder       Choose either docker and buildah as the targetted image puller. By default the builder is docker.
 -d, --debug         Turn on debug logging
 ```
@@ -31,5 +31,5 @@ ocictl pull [flags] [...]
 
 Command
 ```
-ocictl pull --path ./spec.yaml --name myimage/cool-image:0.0.1
+ocictl pull --path ./ocibuilder.yaml --name myimage/cool-image:0.0.1
 ```
