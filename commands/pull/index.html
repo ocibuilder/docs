@@ -638,14 +638,14 @@ been found in any of the specified registries, a pull is executed.</p>
 
 <h4 id="options">Options</h4>
 <pre><code>-i, --name          Specify the name of the image you want to pull
--p, --path          Path to your spec.yaml. By default will look in the current working directory
+-p, --path          Path to your ocibuilder.yaml. By default will look in the current working directory
 -b, --builder       Choose either docker and buildah as the targetted image puller. By default the builder is docker.
 -d, --debug         Turn on debug logging
 </code></pre>
 
 <h3 id="example">Example</h3>
 <p>Command</p>
-<pre><code>ocictl pull --path ./spec.yaml --name myimage/cool-image:0.0.1
+<pre><code>ocictl pull --path ./ocibuilder.yaml --name myimage/cool-image:0.0.1
 </code></pre>
                 
                   

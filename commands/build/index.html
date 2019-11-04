@@ -627,25 +627,25 @@
                 <h2 id="build">Build</h2>
 <p>Builds an oci compliant image using either docker or buildah</p>
 <h4 id="synopsis">Synopsis</h4>
-<p>This command runs an image build with the specification defined in your projects spec.yaml file. It can run a build in both docker and buildah varieties.</p>
+<p>This command runs an image build with the specification defined in your projects ocibuilder.yaml file. It can run a build in both docker and buildah varieties.</p>
 <h4 id="command">Command</h4>
 <pre><code>ocictl build [flags] [...]
 </code></pre>
 
 <h4 id="options">Options</h4>
-<pre><code>-n, --name          Specify the name of your build or defined in spec.yaml
--p, --path          Path to your spec.yaml or build.yaml. By default will look in the current working directory
+<pre><code>-n, --name          Specify the name of your build or defined in ocibuilder.yaml
+-p, --path          Path to your ocibuilder.yaml or build.yaml. By default will look in the current working directory
 -b, --builder       Choose either docker and buildah as the targetted image builder. By default the builder is docker.
 -d, --debug         Turn on debug logging
 -o, --overlay       Path to your overlay.yaml file
 </code></pre>
 
 <h4 id="example">Example</h4>
-<pre><code>ocictl build --path ./spec.yaml --overlay ./overlay.yaml
+<pre><code>ocictl build --path ./ocibuilder.yaml --overlay ./overlay.yaml
 </code></pre>
 
 <p>or you can use shorthand options like this:</p>
-<pre><code>ocictl build -p ./spec.yaml -o ./overlay.yaml
+<pre><code>ocictl build -p ./ocibuilder.yaml -o ./overlay.yaml
 </code></pre>
                 
                   

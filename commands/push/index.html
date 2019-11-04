@@ -638,13 +638,13 @@ authentication passed in the login spec.</p>
 </code></pre>
 
 <h4 id="options">Options</h4>
-<pre><code>-p, --path          Path to your spec.yaml or push.yaml. By default will look in the current working directory
+<pre><code>-p, --path          Path to your ocibuilder.yaml or push.yaml. By default will look in the current working directory
 -b, --builder       Choose either docker and buildah as the targetted image builder. By default the builder is docker.
 -d, --debug         Turn on debug logging
 </code></pre>
 
 <h3 id="example">Example</h3>
-<p>spec.yaml</p>
+<p>ocibuilder.yaml</p>
 <pre><code class="yaml">push:
     - registry: my-image-registry.docker.com:1111
       image: myimage/cool-image
@@ -652,11 +652,11 @@ authentication passed in the login spec.</p>
 </code></pre>
 
 <p>Command</p>
-<pre><code>ocictl push --path ./spec.yaml
+<pre><code>ocictl push --path ./ocibuilder.yaml
 </code></pre>
 
 <p>or you can use shorthand option like this: </p>
-<pre><code>ocictl push -p ./spec.yaml
+<pre><code>ocictl push -p ./ocibuilder.yaml
 </code></pre>
                 
                   
