@@ -15,7 +15,7 @@ reference for ytt can be found [here](https://github.com/k14s/ytt/blob/master/do
 
 Example:
 
-*spec.yaml*
+*ocibuilder.yaml*
 ```yaml
 build:
   templates:

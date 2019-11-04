@@ -1,11 +1,11 @@
 # Simple Build
 
 An example of a simple **build** specification, which can be used as a `build.yaml` file or
-configured within your `spec.yaml`.
+configured within your `ocibuilder.yaml`.
 
 ```yaml
 # You can either use this individual build.yaml file or 
-# specify the build specifications in the global spec.yaml
+# specify the build specifications in the global ocibuilder.yaml
 
 builds:
     templates:

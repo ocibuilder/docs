@@ -1,10 +1,10 @@
 ## Init
 
-Initialises your repository with a spec.yaml file
+Initialises your repository with a ocibuilder.yaml file
 
 #### Synopsis
 
-This command creates a very basic spec.yaml template file, allowing you to easily get up and running and start customising your
+This command creates a very basic ocibuilder.yaml template file, allowing you to easily get up and running and start customising your
 build specification
 
 #### Command

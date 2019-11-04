@@ -1,9 +1,9 @@
 # Complete Specification
 
-The below is a complete example of a `spec.yaml` file for the ocibuilder.
+The below is a complete example of a `ocibuilder.yaml` file for the ocibuilder.
 
 ```yaml
-# Sample complete spec.yaml
+# Sample complete ocibuilder.yaml
 
 # Build specification which defines our image build steps
 build:

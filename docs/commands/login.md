@@ -21,7 +21,7 @@ ocictl login [flags] [...]
 #### Options
 
 ```
--p, --path          Path to your spec.yaml or login.yaml. By default will look in the current working directory
+-p, --path          Path to your ocibuilder.yaml or login.yaml. By default will look in the current working directory
 -b, --builder       Choose either docker and buildah as the targetted image puller. By default the builder is docker.
 -d, --debug         Turn on debug logging
 ```
@@ -30,5 +30,5 @@ ocictl login [flags] [...]
 
 Command
 ```
-ocictl login --path ./spec.yaml
+ocictl login --path ./ocibuilder.yaml
 ```

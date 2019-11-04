@@ -1,8 +1,8 @@
 # Configuring Ocibuilder
 
-This document is a reference for ocibuilder v0.1.0 specification keys used in `spec.yaml`.
+This document is a reference for ocibuilder v0.1.0 specification keys used in `ocibuilder.yaml`.
 
-You can find a complete `spec.yaml` example [here](./examples/complete-spec).
+You can find a complete `ocibuilder.yaml` example [here](./examples/complete-spec).
 
 ---
 

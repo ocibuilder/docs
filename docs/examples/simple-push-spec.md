@@ -1,11 +1,11 @@
 # Simple Push
 
 An example of a simple **push** specification, which can be used as a `push.yaml` file or
-configured within your `spec.yaml`.
+configured within your `ocibuilder.yaml`.
 
 ```yaml
 # You can either use this individual push.yaml file or 
-# specify the push specifications in the global spec.yaml
+# specify the push specifications in the global ocibuilder.yaml
 
 # This will push your images to specified registries
 push:
