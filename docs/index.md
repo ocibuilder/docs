@@ -4,7 +4,7 @@ The OCI Builder is a tool for producing oci complaint images.
 
 This repository contains all the documentation for getting started and configuring the OCI Builder.
 
-![oci-gopher.png][../assets/oci-gopher.png]
+![oci-gopher.png](../assets/oci-gopher.png)
 
 ## Quick Start
 
