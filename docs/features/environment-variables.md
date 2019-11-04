@@ -16,10 +16,11 @@ params:
   # Replaces the value in location build.steps.0.tag with 0.0.3
   - dest: build.steps.0.tag
     value: 0.0.3
-  # Replaces the value in location build.steps.0.metadata.name with the environment variable $BUILD_DEV
+  # Replaces the value in location build.steps.0.metadata.name with 
+  # the environment variable $BUILD_DEV
   - dest: build.steps.0.metadata.name
-    valueFromEnv: BUILD_DEV
+    valueFromEnvVariable: BUILD_DEV
 ```
 
-If you specify a valueFromEnv with a value that has not been set, a warning will be returned stating that your environment
+If you specify a valueFromEnvVariable with a value that has not been set, a warning will be returned stating that your environment
 variable is empty.

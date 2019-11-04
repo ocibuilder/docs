@@ -22,9 +22,6 @@ ocictl build [flags] [...]
 -o, --overlay       Path to your overlay.yaml file
 ```
 
->**NOTE:** the path flag only looks for your `spec.yaml` file, it does NOT change the build context. By default, the build context will remain in the
-current directory unless explicitly specified in the `imageContext` key in your `spec.yaml`.
-
 #### Example
 
 ```
