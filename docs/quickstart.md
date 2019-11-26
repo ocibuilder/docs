@@ -26,10 +26,24 @@ Buildah can be installed for a number of different linux distributions and instr
 
 ## Install ocictl
 
-Download a binary release of ocictl from the [official releases page](https://github.com/ocibuilder/ocibuilder/releases) or pull the ocictl image from
-our [Docker registry](https://cloud.docker.com/u/ocibuilder/repository/docker/ocibuilder/ocictl).
+You can use the `install.sh` script to install the latest version of `ocictl`:
 
-More details are available on the ocictl [installation guide](./installation)
+```bash
+curl https://raw.githubusercontent.com/ocibuilder/ocibuilder/master/install.sh | sh
+```
+
+This requires `GOPATH` to be set, with bin added to your `PATH`.
+
+Alternatively, you can pull the latest image with Buildah and Docker pre-installed alongside the ocictl is available on our 
+[Dockerhub repository](https://cloud.docker.com/u/ocibuilder/repository/docker/ocibuilder/ocictl).
+
+To pull the latest image run the following command:
+
+```bash
+docker pull ocibuilder/ocictl:latest
+```
+
+More details are available on the ocictl [installation guide](./installation.md)
 
 ## Generating Template Spec
 
