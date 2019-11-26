@@ -672,9 +672,18 @@ have both Docker and Buildah installed by default but with the following conside
 <h4 id="install-buildah">Install Buildah</h4>
 <p>Buildah can be installed for a number of different linux distributions and instructions are available <a href="https://github.com/containers/buildah/blob/master/install.md">here</a></p>
 <h2 id="install-ocictl">Install ocictl</h2>
-<p>Download a binary release of ocictl from the <a href="https://github.com/ocibuilder/ocibuilder/releases">official releases page</a> or pull the ocictl image from
-our <a href="https://cloud.docker.com/u/ocibuilder/repository/docker/ocibuilder/ocictl">Docker registry</a>.</p>
-<p>More details are available on the ocictl <a href="./installation">installation guide</a></p>
+<p>You can use the <code>install.sh</code> script to install the latest version of <code>ocictl</code>:</p>
+<pre><code class="bash">curl https://raw.githubusercontent.com/ocibuilder/ocibuilder/master/install.sh | sh
+</code></pre>
+
+<p>This requires <code>GOPATH</code> to be set, with bin added to your <code>PATH</code>.</p>
+<p>Alternatively, you can pull the latest image with Buildah and Docker pre-installed alongside the ocictl is available on our 
+<a href="https://cloud.docker.com/u/ocibuilder/repository/docker/ocibuilder/ocictl">Dockerhub repository</a>.</p>
+<p>To pull the latest image run the following command:</p>
+<pre><code class="bash">docker pull ocibuilder/ocictl:latest
+</code></pre>
+
+<p>More details are available on the ocictl <a href="../installation/">installation guide</a></p>
 <h2 id="generating-template-spec">Generating Template Spec</h2>
 <p>Once you have <code>ocictl</code> installed and available in the path, you can now put together your desired build specification.</p>
 <p>The quickest way to get a sample spec within your project is to run:</p>
