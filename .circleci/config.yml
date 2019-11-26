@@ -23,10 +23,9 @@ jobs:
           command: mkdocs gh-deploy
 workflows:
   version: 2
-  deploy:
+  deploy_site:
     jobs:
       - deploy:
           filters:
             branches:
-              only:
-                - master
+              only: master
