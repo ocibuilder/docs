@@ -16,8 +16,9 @@ You can find a complete `ocibuilder.yaml` example [here](./examples/complete-spe
                 * [`local`](#local)
             * [`docker`](#docker)
     * [`steps`](#steps)
-        * [`imageContext`](#imagecontext)
+        * [`context`](#context)
             * [`localContext`](#localcontext)
+            * [`gitContext`](#gitcontext)
         * [`stages`](#stages)
             * [`cmd`](#cmd)
             * [`metadata`](#metadata)
@@ -159,7 +160,7 @@ version of ocibuilder - progress can be tracked [here]().
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
 | purge | boolean | Purge after built. Defaults is false. | No |
-| imageContext | v1alpha1.ImageContext | Specify an image build context for the step | No |
+| context | v1alpha1.context | Specify an image build context for the step | No |
 | stages | (*Array*) v1alpha1.Stage | Stages of the build | Yes |
 | tag | string | The tag of the built image | No |
 | metadata | v1alpha1.Metadata | Build metadata, name, labels, annotations | No |
@@ -189,9 +190,9 @@ prevent the constant persisting of images which will not be used.
           contextPath: ./go-app
 ```
 
-##### `imageContext`
+##### `context`
 
-ImageContext enables you to specify a build context for each individual build step. For example, if you have
+context enables you to specify a build context for each individual build step. For example, if you have
 multiple directories and each directory is a separate build step, you are able to specify a particular
 directory as the build context that step.
 
@@ -209,6 +210,20 @@ LocalContext holds local context information for an image build
 | ---- | ---- | ----------- | -------- |
 | contextPath | string | The path to your build context. | Yes |
 
+##### `gitContext`
+
+gitContext is the build context from git for an image build
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| url | string | The path to your build context | Yes |
+| username | Credentials | Username for authentication | No |
+| password | Credentials | Password for authentication | No |
+| sshKeyPath | string | The path to your ssh key | No |
+| branch | string | Branch to pull your context resource from | No |
+| tag | string | Tag to pull your context resource from | No |
+| ref | string | Ref to use to pull trigger resource. Will result in a shallow clone and fetch | No |
+| remote | GitRemoteConfig | Remote to manage set of tracked repositories. Defaults to "origin" | No |
 
 ##### `stages`
 
