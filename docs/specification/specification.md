@@ -303,10 +303,12 @@ The metadata type is used both in build steps and build stages.
 Within a **build step** name is used to name your final built image, but can be also used to refer to other **build stages** in a
 multi-stage build.
 
+Any labels specified in your build configuration will be attached to your built image.
+
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
 | annotations | map | Annotations for your build config | No |
-| labels | map | Labels for your build config | No |
+| labels | map | Labels for your build config and built image | No |
 | name | string | Name for your build configuration | Yes |
 
 ---
