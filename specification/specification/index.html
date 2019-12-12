@@ -32,7 +32,7 @@
         <meta name="lang:search.tokenizer" content="[\s\-]+">
       
       <link rel="shortcut icon" href="../../assets/images/favicon.png">
-      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.5.0">
+      <meta name="generator" content="mkdocs-1.0.4, mkdocs-material-4.6.0">
     
     
       
@@ -50,7 +50,7 @@
     
       
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700|Roboto+Mono&display=fallback">
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,400,400i,700%7CRoboto+Mono&display=fallback">
         <style>body,input{font-family:"Roboto","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"Roboto Mono","Courier New",Courier,monospace}</style>
       
     
@@ -573,8 +573,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#imagecontext" class="md-nav__link">
-    imageContext
+  <a href="#context" class="md-nav__link">
+    context
   </a>
   
 </li>
@@ -582,6 +582,13 @@
           <li class="md-nav__item">
   <a href="#localcontext" class="md-nav__link">
     localContext
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitcontext" class="md-nav__link">
+    gitContext
   </a>
   
 </li>
@@ -799,8 +806,8 @@
       <ul class="md-nav__list">
         
           <li class="md-nav__item">
-  <a href="#imagecontext" class="md-nav__link">
-    imageContext
+  <a href="#context" class="md-nav__link">
+    context
   </a>
   
 </li>
@@ -808,6 +815,13 @@
           <li class="md-nav__item">
   <a href="#localcontext" class="md-nav__link">
     localContext
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#gitcontext" class="md-nav__link">
+    gitContext
   </a>
   
 </li>
@@ -947,8 +961,9 @@
 </ul>
 </li>
 <li><a href="#steps"><code>steps</code></a><ul>
-<li><a href="#imagecontext"><code>imageContext</code></a><ul>
+<li><a href="#context"><code>context</code></a><ul>
 <li><a href="#localcontext"><code>localContext</code></a></li>
+<li><a href="#gitcontext"><code>gitContext</code></a></li>
 </ul>
 </li>
 <li><a href="#stages"><code>stages</code></a><ul>
@@ -1212,8 +1227,8 @@ version of ocibuilder - progress can be tracked <a href="">here</a>.</p>
 <td>No</td>
 </tr>
 <tr>
-<td>imageContext</td>
-<td>v1alpha1.ImageContext</td>
+<td>context</td>
+<td>v1alpha1.context</td>
 <td>Specify an image build context for the step</td>
 <td>No</td>
 </tr>
@@ -1259,8 +1274,8 @@ prevent the constant persisting of images which will not be used.</p>
           contextPath: ./go-app
 </code></pre>
 
-<h5 id="imagecontext"><code>imageContext</code></h5>
-<p>ImageContext enables you to specify a build context for each individual build step. For example, if you have
+<h5 id="context"><code>context</code></h5>
+<p>context enables you to specify a build context for each individual build step. For example, if you have
 multiple directories and each directory is a separate build step, you are able to specify a particular
 directory as the build context that step.</p>
 <p>Additionally, an upcoming version of ocibuilder will have support to set external build contexts of S3 buckets and Git paths.</p>
@@ -1299,6 +1314,68 @@ directory as the build context that step.</p>
 <td>string</td>
 <td>The path to your build context.</td>
 <td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h5 id="gitcontext"><code>gitContext</code></h5>
+<p>gitContext is the build context from git for an image build</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>The path to your build context</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>username</td>
+<td>Credentials</td>
+<td>Username for authentication</td>
+<td>No</td>
+</tr>
+<tr>
+<td>password</td>
+<td>Credentials</td>
+<td>Password for authentication</td>
+<td>No</td>
+</tr>
+<tr>
+<td>sshKeyPath</td>
+<td>string</td>
+<td>The path to your ssh key</td>
+<td>No</td>
+</tr>
+<tr>
+<td>branch</td>
+<td>string</td>
+<td>Branch to pull your context resource from</td>
+<td>No</td>
+</tr>
+<tr>
+<td>tag</td>
+<td>string</td>
+<td>Tag to pull your context resource from</td>
+<td>No</td>
+</tr>
+<tr>
+<td>ref</td>
+<td>string</td>
+<td>Ref to use to pull trigger resource. Will result in a shallow clone and fetch</td>
+<td>No</td>
+</tr>
+<tr>
+<td>remote</td>
+<td>GitRemoteConfig</td>
+<td>Remote to manage set of tracked repositories. Defaults to "origin"</td>
+<td>No</td>
 </tr>
 </tbody>
 </table>
@@ -1706,6 +1783,7 @@ element you would have <code>steps.0</code></p>
                 
                   
                 
+                
               
               
                 
@@ -1758,7 +1836,7 @@ element you would have <code>steps.0</code></p>
       
     </div>
     
-      <script src="../../assets/javascripts/application.a8b5e56f.js"></script>
+      <script src="../../assets/javascripts/application.808e90bb.js"></script>
       
       <script>app.initialize({version:"1.0.4",url:{base:"../.."}})</script>
       
