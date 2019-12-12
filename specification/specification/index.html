@@ -1493,6 +1493,7 @@ new container image and sets an entrypoint.</p>
 <p>The metadata type is used both in build steps and build stages. </p>
 <p>Within a <strong>build step</strong> name is used to name your final built image, but can be also used to refer to other <strong>build stages</strong> in a
 multi-stage build.</p>
+<p>Any labels specified in your build configuration will be attached to your built image.</p>
 <table>
 <thead>
 <tr>
@@ -1512,7 +1513,7 @@ multi-stage build.</p>
 <tr>
 <td>labels</td>
 <td>map</td>
-<td>Labels for your build config</td>
+<td>Labels for your build config and built image</td>
 <td>No</td>
 </tr>
 <tr>
