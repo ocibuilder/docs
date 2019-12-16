@@ -1,5 +1,7 @@
 ## Overlays
 
+### Description
+
 The ocibuilder supports yaml overlays which can be applied at runtime using the `--overlay` command line flag and passing in an overlay yaml file.
 
 The overlaying functionality of ocibuilder is built on top of [ytt](https://github.com/k14s/ytt) which makes use of annotations for matching and overlaying yaml on top of a template. 
@@ -12,8 +14,19 @@ all the necessary annotations for you.
 >**NOTE:** If you want to specify your own ytt annotations, you are able to do so by passing a [standard annotated ytt overlay file](https://get-ytt.io/#example:example-overlay-files). Annotation
 reference for ytt can be found [here](https://github.com/k14s/ytt/blob/master/docs/lang-ref-ytt-overlay.md).
 
+#### Remote Overlays
 
-Example:
+Remote overlays are also supported by the ocibuilder. To use a remote overlay, simple pass in a valid URL as your overlay path. This will then
+downloaded and the overlay will be applied to your specification.
+
+Your downloaded overlay file will then  be cleaned up for you.
+
+e.g. 
+```bash
+ocictl build --overlay https://github.com/randomrepo/overlay.yaml
+```
+
+### Examples
 
 *ocibuilder.yaml*
 ```yaml

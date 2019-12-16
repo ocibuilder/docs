@@ -143,7 +143,8 @@ Alternatively, you can pass in a filepath to a text file which contains your doc
 | ---- | ---- | ----------- | -------- |
 | inline | *(Array)* string | Inline Dockerfile commands | No |
 | path | string | Path to a file that contains Dockerfile commands | No |
-
+| url | string | Url to a remote command file | No |
+| auth | v1alpha1.PlainCreds | Basic auth for accessing a remote command file  | No |
 
 #### `steps`
 
@@ -153,7 +154,7 @@ This can be particularly useful when trying to build multiple modules or
 projects in a single repository, allowing you to reuse the `templates` that you have defined in the specification.
 
 Each step is run consecutively by ocibuilder with concurrent build steps running in a future
-version of ocibuilder - progress can be tracked [here]().
+version of ocibuilder - progress can be tracked [here](https://github.com/ocibuilder/ocibuilder/issues/7).
 
 
 | Name | Type | Description | Required |
