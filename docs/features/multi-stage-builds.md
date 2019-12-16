@@ -1,5 +1,7 @@
 ## Multi-Stage Builds
 
+### Description
+
 Multi Stage builds were introduced in Docker 17.05, allowing you to optimize your image builds and share data between
 different builds.
 

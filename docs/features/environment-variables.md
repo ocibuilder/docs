@@ -1,5 +1,7 @@
 ## Environment Variables
 
+### Description
+
 The ocibuilder supports two ways of parametizing your specification file. This is either through values specified in your
 ocibuilder.yaml directly or through referring to a system environment variable.
 
@@ -9,7 +11,8 @@ want the field to  replaced with.
 >**NOTE**: A specific array item is referred to by index  in the dest field. For example, if you want to access the first step
 element you would have ``steps.0``
 
-*e.g.*
+
+### Examples
 
 ```yaml
 params:
