@@ -144,7 +144,16 @@ Alternatively, you can pass in a filepath to a text file which contains your doc
 | inline | *(Array)* string | Inline Dockerfile commands | No |
 | path | string | Path to a file that contains Dockerfile commands | No |
 | url | string | Url to a remote command file | No |
-| auth | v1alpha1.PlainCreds | Basic auth for accessing a remote command file  | No |
+| auth | v1alpha1.RemoteCreds | Basic auth for accessing a remote file  | No |
+
+##### `auth`
+
+You can specify remote basic auth credentials for accessing remote template files and overlays
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| username | string | Username refers to an env var that holds the username | Yes |
+| password | string | Password refers to an env var that holds the password | No |
 
 #### `steps`
 
