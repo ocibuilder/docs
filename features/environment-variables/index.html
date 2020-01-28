@@ -434,6 +434,26 @@
     Environment Variables
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -535,6 +555,26 @@
     Environment Variables
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -557,6 +597,7 @@
                   <h1>Environment variables</h1>
                 
                 <h2 id="environment-variables">Environment Variables</h2>
+<h3 id="description">Description</h3>
 <p>The ocibuilder supports two ways of parametizing your specification file. This is either through values specified in your
 ocibuilder.yaml directly or through referring to a system environment variable.</p>
 <p>Parameters are defined in the <em>params</em> field in your ocibuilder.yaml and refer to a destination of field to replace and the value you
@@ -565,7 +606,7 @@ want the field to  replaced with.</p>
 <p><strong>NOTE</strong>: A specific array item is referred to by index  in the dest field. For example, if you want to access the first step
 element you would have <code>steps.0</code></p>
 </blockquote>
-<p><em>e.g.</em></p>
+<h3 id="examples">Examples</h3>
 <pre><code class="yaml">params:
   # Replaces the value in location build.steps.0.tag with 0.0.3
   - dest: build.steps.0.tag

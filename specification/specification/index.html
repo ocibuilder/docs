@@ -559,6 +559,13 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#auth" class="md-nav__link">
+    auth
+  </a>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -788,6 +795,13 @@
           <li class="md-nav__item">
   <a href="#docker" class="md-nav__link">
     docker
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#auth" class="md-nav__link">
+    auth
   </a>
   
 </li>
@@ -1202,6 +1216,44 @@ with each docker command being a string array element.</p>
 <td>Path to a file that contains Dockerfile commands</td>
 <td>No</td>
 </tr>
+<tr>
+<td>url</td>
+<td>string</td>
+<td>Url to a remote command file</td>
+<td>No</td>
+</tr>
+<tr>
+<td>auth</td>
+<td>v1alpha1.RemoteCreds</td>
+<td>Basic auth for accessing a remote file</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h5 id="auth"><code>auth</code></h5>
+<p>You can specify remote basic auth credentials for accessing remote template files and overlays</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>username</td>
+<td>string</td>
+<td>Username refers to an env var that holds the username</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>password</td>
+<td>string</td>
+<td>Password refers to an env var that holds the password</td>
+<td>No</td>
+</tr>
 </tbody>
 </table>
 <h4 id="steps"><code>steps</code></h4>
@@ -1209,7 +1261,7 @@ with each docker command being a string array element.</p>
 <p>This can be particularly useful when trying to build multiple modules or 
 projects in a single repository, allowing you to reuse the <code>templates</code> that you have defined in the specification.</p>
 <p>Each step is run consecutively by ocibuilder with concurrent build steps running in a future
-version of ocibuilder - progress can be tracked <a href="">here</a>.</p>
+version of ocibuilder - progress can be tracked <a href="https://github.com/ocibuilder/ocibuilder/issues/7">here</a>.</p>
 <table>
 <thead>
 <tr>

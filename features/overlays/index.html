@@ -458,6 +458,39 @@
     Overlays
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remote-overlays" class="md-nav__link">
+    Remote Overlays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -535,6 +568,39 @@
     Overlays
   </a>
   
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#description" class="md-nav__link">
+    Description
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#remote-overlays" class="md-nav__link">
+    Remote Overlays
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#examples" class="md-nav__link">
+    Examples
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
 </li>
       
       
@@ -557,6 +623,7 @@
                   <h1>Overlays</h1>
                 
                 <h2 id="overlays">Overlays</h2>
+<h3 id="description">Description</h3>
 <p>The ocibuilder supports yaml overlays which can be applied at runtime using the <code>--overlay</code> command line flag and passing in an overlay yaml file.</p>
 <p>The overlaying functionality of ocibuilder is built on top of <a href="https://github.com/k14s/ytt">ytt</a> which makes use of annotations for matching and overlaying yaml on top of a template. </p>
 <p>The ocibuilder abstracts away these annotations and takes advantage of labels which can be defined in your build specification. You specify what array item you want to overlay
@@ -566,7 +633,15 @@ all the necessary annotations for you.</p>
 <p><strong>NOTE:</strong> If you want to specify your own ytt annotations, you are able to do so by passing a <a href="https://get-ytt.io/#example:example-overlay-files">standard annotated ytt overlay file</a>. Annotation
 reference for ytt can be found <a href="https://github.com/k14s/ytt/blob/master/docs/lang-ref-ytt-overlay.md">here</a>.</p>
 </blockquote>
-<p>Example:</p>
+<h4 id="remote-overlays">Remote Overlays</h4>
+<p>Remote overlays are also supported by the ocibuilder. To use a remote overlay, simple pass in a valid URL as your overlay path. This will then
+downloaded and the overlay will be applied to your specification.</p>
+<p>Your downloaded overlay file will then  be cleaned up for you.</p>
+<p>e.g. </p>
+<pre><code class="bash">ocictl build --overlay https://github.com/randomrepo/overlay.yaml
+</code></pre>
+
+<h3 id="examples">Examples</h3>
 <p><em>ocibuilder.yaml</em></p>
 <pre><code class="yaml">build:
   templates:
