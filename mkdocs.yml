@@ -1,3 +1,4 @@
 site_name: OCI Builder
+repo_url: https://github.com/ocibuilder/ocibuilder/
 theme:
   name: 'material'
