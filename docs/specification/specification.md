@@ -32,7 +32,12 @@ You can find a complete `ocibuilder.yaml` example [here](./examples/complete-spe
 * [`params`](#params)
 * [`daemon`](#daemon)
 * [`metadata`](#metadata)
-
+    * [`storeConfig`](#storeconfig)
+    * [`signKey`](#signkey)
+        * [`grafeas`](#grafeas)
+            * [`notes`](#notes)
+    * [`data`](#data)
+    
 ---
 
 ### `build`
