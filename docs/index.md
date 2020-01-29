@@ -2,7 +2,7 @@
 
 ![oci-gopher.png](https://raw.githubusercontent.com/ocibuilder/docs/master/assets/oci-gopher.png)
 
-The OCI Builder is a tool for producing oci compliant images. 
+The [OCIBuilder](https://github.com/ocibuilder/ocibuilder) is a tool for producing oci compliant images. 
 
 This repository contains all the documentation for getting started and configuring the OCI Builder.
 
@@ -27,3 +27,6 @@ Some specification examples are available [here](./examples/complete-spec)
 
 Features offered by the OCI Builder are documented [here](./features/environment-variables)
 
+## Repositories
+
+The ocibuilder project is available on [GitHub](https://github.com/ocibuilder/ocibuilder) with our `ocictl` images available on [Dockerhub](https://hub.docker.com/repository/docker/ocibuilder/ocictl)
