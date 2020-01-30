@@ -31,7 +31,13 @@ You can find a complete `ocibuilder.yaml` example [here](./examples/complete-spe
 * [`push`](#push)
 * [`params`](#params)
 * [`daemon`](#daemon)
-
+* [`metadata`](#metadata)
+    * [`storeConfig`](#storeconfig)
+    * [`signKey`](#signkey)
+        * [`grafeas`](#grafeas)
+            * [`notes`](#notes)
+    * [`data`](#data)
+    
 ---
 
 ### `build`
@@ -173,7 +179,7 @@ version of ocibuilder - progress can be tracked [here](https://github.com/ocibui
 | context | v1alpha1.context | Specify an image build context for the step | No |
 | stages | (*Array*) v1alpha1.Stage | Stages of the build | Yes |
 | tag | string | The tag of the built image | No |
-| metadata | v1alpha1.Metadata | Build metadata, name, labels, annotations | No |
+| metadata | v1alpha1.ImageMetadata | Image metadata, name, labels, annotations and source | No |
 
 The purge flag allows you to purge your built images after they've been built. Ensures cleanup and is useful in build pipelines to
 prevent the constant persisting of images which will not be used.
@@ -251,7 +257,7 @@ Required to pass in either cmd or a build template.
 | base | v1alpha1.Base | Refers to parent image for given build stage. | Yes |
 | cmd  | (*Array*) v1alpha1.BuildTemplateStep | Cmd refers to a template defined in a stage without a template. | No |
 | template | string | Template refers to one of the build templates. | No |
-| metadata | v1alpha1.Metadata | Build metadata, name, labels, annotations | No |
+| metadata | v1alpha1.ImageMetadata | Image metadata, name, labels, annotations and source | No |
 
 **Example**
 
@@ -304,9 +310,9 @@ Base is where you define your base image.
     tag: latest
 ```
 
-##### `metadata`
+##### `metadata` [`image`]
 
-This is where any build metadata is defined, including image name, any labels and annotations that you want to specify for your build.
+This is where any image metadata is defined, including image name, any labels and annotations that you want to specify for your build.
 
 The metadata type is used both in build steps and build stages. 
 
@@ -320,6 +326,8 @@ Any labels specified in your build configuration will be attached to your built 
 | annotations | map | Annotations for your build config | No |
 | labels | map | Labels for your build config and built image | No |
 | name | string | Name for your build configuration | Yes |
+| creator | string | Creator is the creator of the project | Yes |
+| source | string | Source is the URI to the source code repository | Yes |
 
 ---
 
@@ -458,3 +466,86 @@ This value can be overriding by the `builder` command line flag which takes prio
 | Name | Type | Description | Required |
 | ---- | ---- | ----------- | -------- |
 | daemon | boolean | Allows you to specify whether to use the docker daemon as a builder or buildah. Default is true. | No |
+
+### `metadata`
+
+Metadata allows you to define all the configurations for pushing build and image metadata into a metadata store like [Grafeas](https://github.com/grafeas/grafeas).
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| storeConfig | v1alpha1.StoreConfig | StoreConfig holds the configuration for connecting to a metadata store | No |
+| signKey | *v1alpha1.SignKey | SignKey holds the signing key for signing image IDs for image attestation purposes | No |
+| hostname | string | Hostname is the hostname of your metadata store | No |
+| data | []v1alpha1.MetadataType | Data holds a list of all the metadata types that you would like to push to your metadata store | No |
+
+**Example**
+```yaml
+metadata:
+  hostname: "http://localhost:8080"
+  signKey: 
+    envPublicKey: OCI_PUB_KEY
+    envPrivateKey: OCI_PRI_KEY
+  storeConfig:
+    grafeas:
+      project: "image-build"
+      notes:
+        build: "projects/image-build/notes/oci-build"
+        attestation: "projects/image-build/notes/oci-attest"
+        image: "projects/image-build/notes/oci-image"
+  data:
+    - image
+    - build
+    - attestation
+```
+
+#### `storeConfig`
+
+Store config holds store specific configurations to do with connection and required fields. Currently the only metadata store 
+support by the ocibuilder is Grafeas.
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| grafeas | *v1alpha1.Grafeas | Grafeas holds the config for the Grafeas metadata store | Yes |
+
+##### `grafeas`
+
+Grafeas holds any grafeas specific configurations. This allows you to specify a `project` to push metadata to
+as well as define individual `notes` for each type of metadata that can be pushed.
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| project | string | Project is the name of the project ID to store the occurrence | Yes |
+| notes | v1alpha1.Notes | Notes holds the notes for each of the three occurrence types | Yes |
+
+###### `notes`
+
+Notes is where you can specify Grafeas note names for Build, Attestation and DerivedImage metadata.
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| attestation | string | Attestation is the analysis note associated with a attestation occurrence, in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]` | Yes |
+| build | string | Build is the analysis note associated with a build occurrence, in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]` | Yes |
+| image | string | Image is the analysis note associated with a derived image occurrence, in the form of `projects/[PROVIDER_ID]/notes/[NOTE_ID]` | Yes |
+
+
+#### `signKey`
+
+SignKey holds your private and public signing keys to sign your image after it has been built which can be used later for image attestation.
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| plainPrivateKey | string | PrivateKey is an ascii armored private key used to sign images for image attestation | No |
+| plainPublicKey | string | PublicKey is the ascii armored public key for verification in image attestation | No |
+| envPrivateKey | string | EnvPrivateKey is an env variable that holds an ascii armored private key used to sign images for image attestation | No |
+| envPublicKey | string | EnvPublicKey is an env variable that holds an ascii armored public key used to sign images for image attestation | No |
+| passphrase | string | Passphrase is the passphrase for decrypting the private key | No |
+
+#### `data`
+
+Data holds a list of the types of metadata that you want pushed to the Metadata store.
+
+| Name | Type | Description | Required |
+| ---- | ---- | ----------- | -------- |
+| attestation | string | Attestation in the data array signifies you want to store attestation metadata | No |
+| build | string | Build in the data array signifies you want to store build metadata | No |
+| image | string | Image in the data array signifies you want to store image metadata | No |
