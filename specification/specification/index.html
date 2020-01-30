@@ -461,6 +461,18 @@
 
 
   <li class="md-nav__item">
+    <a href="../../features/metadata-store/" title="Integration with Grafeas Metadata Store" class="md-nav__link">
+      Integration with Grafeas Metadata Store
+    </a>
+  </li>
+
+        
+          
+          
+          
+
+
+  <li class="md-nav__item">
     <a href="../../features/multi-stage-builds/" title="Multi stage builds" class="md-nav__link">
       Multi stage builds
     </a>
@@ -659,8 +671,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#metadata" class="md-nav__link">
-    metadata
+  <a href="#metadata-image" class="md-nav__link">
+    metadata [image]
   </a>
   
 </li>
@@ -733,6 +745,66 @@
   <a href="#daemon" class="md-nav__link">
     daemon
   </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#metadata" class="md-nav__link">
+    metadata
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storeconfig" class="md-nav__link">
+    storeConfig
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grafeas" class="md-nav__link">
+    grafeas
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signkey" class="md-nav__link">
+    signKey
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
   
 </li>
         
@@ -899,8 +971,8 @@
 </li>
         
           <li class="md-nav__item">
-  <a href="#metadata" class="md-nav__link">
-    metadata
+  <a href="#metadata-image" class="md-nav__link">
+    metadata [image]
   </a>
   
 </li>
@@ -976,6 +1048,66 @@
   
 </li>
         
+          <li class="md-nav__item">
+  <a href="#metadata" class="md-nav__link">
+    metadata
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#storeconfig" class="md-nav__link">
+    storeConfig
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#grafeas" class="md-nav__link">
+    grafeas
+  </a>
+  
+    <nav class="md-nav">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#notes" class="md-nav__link">
+    notes
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#signkey" class="md-nav__link">
+    signKey
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#data" class="md-nav__link">
+    data
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
       </ul>
     </nav>
   
@@ -1048,6 +1180,18 @@
 <li><a href="#push"><code>push</code></a></li>
 <li><a href="#params"><code>params</code></a></li>
 <li><a href="#daemon"><code>daemon</code></a></li>
+<li><a href="#metadata"><code>metadata</code></a><ul>
+<li><a href="#storeconfig"><code>storeConfig</code></a></li>
+<li><a href="#signkey"><code>signKey</code></a><ul>
+<li><a href="#grafeas"><code>grafeas</code></a><ul>
+<li><a href="#notes"><code>notes</code></a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li><a href="#data"><code>data</code></a></li>
+</ul>
+</li>
 </ul>
 <hr />
 <h3 id="build"><code>build</code></h3>
@@ -1344,8 +1488,8 @@ version of ocibuilder - progress can be tracked <a href="https://github.com/ocib
 </tr>
 <tr>
 <td>metadata</td>
-<td>v1alpha1.Metadata</td>
-<td>Build metadata, name, labels, annotations</td>
+<td>v1alpha1.ImageMetadata</td>
+<td>Image metadata, name, labels, annotations and source</td>
 <td>No</td>
 </tr>
 </tbody>
@@ -1513,8 +1657,8 @@ drastically reduce final image sizes. You are able to define a multi-stage build
 </tr>
 <tr>
 <td>metadata</td>
-<td>v1alpha1.Metadata</td>
-<td>Build metadata, name, labels, annotations</td>
+<td>v1alpha1.ImageMetadata</td>
+<td>Image metadata, name, labels, annotations and source</td>
 <td>No</td>
 </tr>
 </tbody>
@@ -1586,8 +1730,8 @@ new container image and sets an entrypoint.</p>
     tag: latest
 </code></pre>
 
-<h5 id="metadata"><code>metadata</code></h5>
-<p>This is where any build metadata is defined, including image name, any labels and annotations that you want to specify for your build.</p>
+<h5 id="metadata-image"><code>metadata</code> [<code>image</code>]</h5>
+<p>This is where any image metadata is defined, including image name, any labels and annotations that you want to specify for your build.</p>
 <p>The metadata type is used both in build steps and build stages. </p>
 <p>Within a <strong>build step</strong> name is used to name your final built image, but can be also used to refer to other <strong>build stages</strong> in a
 multi-stage build.</p>
@@ -1618,6 +1762,18 @@ multi-stage build.</p>
 <td>name</td>
 <td>string</td>
 <td>Name for your build configuration</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>creator</td>
+<td>string</td>
+<td>Creator is the creator of the project</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>source</td>
+<td>string</td>
+<td>Source is the URI to the source code repository</td>
 <td>Yes</td>
 </tr>
 </tbody>
@@ -1875,6 +2031,219 @@ element you would have <code>steps.0</code></p>
 <td>daemon</td>
 <td>boolean</td>
 <td>Allows you to specify whether to use the docker daemon as a builder or buildah. Default is true.</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h3 id="metadata"><code>metadata</code></h3>
+<p>Metadata allows you to define all the configurations for pushing build and image metadata into a metadata store like <a href="https://github.com/grafeas/grafeas">Grafeas</a>.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>storeConfig</td>
+<td>v1alpha1.StoreConfig</td>
+<td>StoreConfig holds the configuration for connecting to a metadata store</td>
+<td>No</td>
+</tr>
+<tr>
+<td>signKey</td>
+<td>*v1alpha1.SignKey</td>
+<td>SignKey holds the signing key for signing image IDs for image attestation purposes</td>
+<td>No</td>
+</tr>
+<tr>
+<td>hostname</td>
+<td>string</td>
+<td>Hostname is the hostname of your metadata store</td>
+<td>No</td>
+</tr>
+<tr>
+<td>data</td>
+<td>[]v1alpha1.MetadataType</td>
+<td>Data holds a list of all the metadata types that you would like to push to your metadata store</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<p><strong>Example</strong></p>
+<pre><code class="yaml">metadata:
+  hostname: &quot;http://localhost:8080&quot;
+  signKey: 
+    envPublicKey: OCI_PUB_KEY
+    envPrivateKey: OCI_PRI_KEY
+  storeConfig:
+    grafeas:
+      project: &quot;image-build&quot;
+      notes:
+        build: &quot;projects/image-build/notes/oci-build&quot;
+        attestation: &quot;projects/image-build/notes/oci-attest&quot;
+        image: &quot;projects/image-build/notes/oci-image&quot;
+  data:
+    - image
+    - build
+    - attestation
+</code></pre>
+
+<h4 id="storeconfig"><code>storeConfig</code></h4>
+<p>Store config holds store specific configurations to do with connection and required fields. Currently the only metadata store 
+support by the ocibuilder is Grafeas.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>grafeas</td>
+<td>*v1alpha1.Grafeas</td>
+<td>Grafeas holds the config for the Grafeas metadata store</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h5 id="grafeas"><code>grafeas</code></h5>
+<p>Grafeas holds any grafeas specific configurations. This allows you to specify a <code>project</code> to push metadata to
+as well as define individual <code>notes</code> for each type of metadata that can be pushed.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>project</td>
+<td>string</td>
+<td>Project is the name of the project ID to store the occurrence</td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>notes</td>
+<td>v1alpha1.Notes</td>
+<td>Notes holds the notes for each of the three occurrence types</td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h6 id="notes"><code>notes</code></h6>
+<p>Notes is where you can specify Grafeas note names for Build, Attestation and DerivedImage metadata.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>attestation</td>
+<td>string</td>
+<td>Attestation is the analysis note associated with a attestation occurrence, in the form of <code>projects/[PROVIDER_ID]/notes/[NOTE_ID]</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>build</td>
+<td>string</td>
+<td>Build is the analysis note associated with a build occurrence, in the form of <code>projects/[PROVIDER_ID]/notes/[NOTE_ID]</code></td>
+<td>Yes</td>
+</tr>
+<tr>
+<td>image</td>
+<td>string</td>
+<td>Image is the analysis note associated with a derived image occurrence, in the form of <code>projects/[PROVIDER_ID]/notes/[NOTE_ID]</code></td>
+<td>Yes</td>
+</tr>
+</tbody>
+</table>
+<h4 id="signkey"><code>signKey</code></h4>
+<p>SignKey holds your private and public signing keys to sign your image after it has been built which can be used later for image attestation.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>plainPrivateKey</td>
+<td>string</td>
+<td>PrivateKey is an ascii armored private key used to sign images for image attestation</td>
+<td>No</td>
+</tr>
+<tr>
+<td>plainPublicKey</td>
+<td>string</td>
+<td>PublicKey is the ascii armored public key for verification in image attestation</td>
+<td>No</td>
+</tr>
+<tr>
+<td>envPrivateKey</td>
+<td>string</td>
+<td>EnvPrivateKey is an env variable that holds an ascii armored private key used to sign images for image attestation</td>
+<td>No</td>
+</tr>
+<tr>
+<td>envPublicKey</td>
+<td>string</td>
+<td>EnvPublicKey is an env variable that holds an ascii armored public key used to sign images for image attestation</td>
+<td>No</td>
+</tr>
+<tr>
+<td>passphrase</td>
+<td>string</td>
+<td>Passphrase is the passphrase for decrypting the private key</td>
+<td>No</td>
+</tr>
+</tbody>
+</table>
+<h4 id="data"><code>data</code></h4>
+<p>Data holds a list of the types of metadata that you want pushed to the Metadata store.</p>
+<table>
+<thead>
+<tr>
+<th>Name</th>
+<th>Type</th>
+<th>Description</th>
+<th>Required</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td>attestation</td>
+<td>string</td>
+<td>Attestation in the data array signifies you want to store attestation metadata</td>
+<td>No</td>
+</tr>
+<tr>
+<td>build</td>
+<td>string</td>
+<td>Build in the data array signifies you want to store build metadata</td>
+<td>No</td>
+</tr>
+<tr>
+<td>image</td>
+<td>string</td>
+<td>Image in the data array signifies you want to store image metadata</td>
 <td>No</td>
 </tr>
 </tbody>
