@@ -1,9 +1,9 @@
-# Integration with Grafeas Metadata Store
+# Metadata Store
 
-One of the defining features of the ocibuilder is it's ability to automatically sign and push image metadata to a [Grafeas](https://github.com/grafeas/grafeas) metadata store. 
+One of the defining features of the ocibuilder is it's ability to automatically push build and image metadata to a [Grafeas](https://github.com/grafeas/grafeas) metadata store. 
 
 To get started using Grafeas there is a getting started guide available [here](https://github.com/artbegolli/grafeas-get-started) which goes through
-the definition and create of Notes and Occurrences.
+the definition and creation of Notes and Occurrences.
 
 The ocibuilder supports the storing of three difference types of metadata (or three different note types), and automatically
 generates occurrences for these types that you have available in your store.
