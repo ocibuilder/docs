@@ -85,7 +85,7 @@ ocictl build --builder buildah
 Once your image has been built you can very easily push it with the following command
 
 ```bash
-ocictl build
+ocictl push
 ```
 
 
